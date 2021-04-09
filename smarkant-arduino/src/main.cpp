@@ -8,21 +8,21 @@
  */
 
 #include <Arduino.h>
-#include <hardware_clock.h>
-#include <system_clock.h>
 #include <Wire.h>
 #include <EEPROM.h>
-#include <Bounce2.h>
-#include <lin_processor.h>
+#include "Bounce2.h"
+#include "lin_processor.h"
+#include "hardware_clock.h"
+#include "system_clock.h"
 
-const uint8_t BUTTON_UP_PIN = 6;
+const uint8_t BUTTON_UP_PIN = 4;
 const uint8_t BUTTON_DOWN_PIN = 5;
-const uint8_t BUTTON_POSITION_1_PIN = 4;
-const uint8_t BUTTON_POSITION_2_PIN = 3;
+const uint8_t BUTTON_POSITION_1_PIN = 8;
+const uint8_t BUTTON_POSITION_2_PIN = 9;
 const uint8_t BUTTON_POSITION_3_PIN = 10;
-const uint8_t BUTTON_POSITION_4_PIN = 9;
-const uint8_t TABLE_UP_PIN = 8;
-const uint8_t TABLE_DOWN_PIN = 7;
+const uint8_t BUTTON_POSITION_4_PIN = 13;
+const uint8_t TABLE_UP_PIN = 0;
+const uint8_t TABLE_DOWN_PIN = 1;
 const int NUM_POSITION_BUTTONS = 4;
 const uint16_t BUTTON_DEBOUNCE_INTERVAL_MS = 5;
 const unsigned long POSITION_BUTTON_STORE_DELAY_MS = 1 * 1000;
