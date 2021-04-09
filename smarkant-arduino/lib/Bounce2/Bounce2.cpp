@@ -69,19 +69,19 @@ bool Bounce::update()
       // We have seen a change from the current button state.
 
       if ( millis() - previous_millis >= interval_millis ) {
-	// We have passed the time threshold, so a new change of state is allowed.
-	// set the STATE_CHANGED flag and the new DEBOUNCED_STATE.
-	// This will be prompt as long as there has been greater than interval_misllis ms since last change of input.
-	// Otherwise debounced state will not change again until bouncing is stable for the timeout period.
-	state ^= _BV(DEBOUNCED_STATE);
-	state |= _BV(STATE_CHANGED);
+        // We have passed the time threshold, so a new change of state is allowed.
+        // set the STATE_CHANGED flag and the new DEBOUNCED_STATE.
+        // This will be prompt as long as there has been greater than interval_misllis ms since last change of input.
+        // Otherwise debounced state will not change again until bouncing is stable for the timeout period.
+        state ^= _BV(DEBOUNCED_STATE);
+        state |= _BV(STATE_CHANGED);
       }
     }
 
     // If the readState is different from previous readState, reset the debounce timer - as input is still unstable
     // and we want to prevent new button state changes until the previous one has remained stable for the timeout.
     if ( readState != (bool)(state & _BV(UNSTABLE_STATE)) ) {
-	// Update Unstable Bit to macth readState
+        // Update Unstable Bit to macth readState
         state ^= _BV(UNSTABLE_STATE);
         previous_millis = millis();
     }
