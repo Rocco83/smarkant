@@ -336,7 +336,7 @@ namespace lin_processor {
 
   static void setupTimer() {
     // OC2B cycle pulse (Arduino digital pin 3, PD3). For debugging.
-    DDRD |= H(DDD3);
+    DDRD |= H(DDD6);
     // Fast PWM mode, OC2B output active high.
     TCCR2A = L(COM2A1) | L(COM2A0) | H(COM2B1) | H(COM2B0) | H(WGM21) | H(WGM20);
     const uint8 prescaler = config.prescaler_x64()
